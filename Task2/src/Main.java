@@ -1,3 +1,4 @@
+import javax.swing.plaf.IconUIResource;
 import java.util.Scanner;
 
 public class Main {
@@ -10,15 +11,31 @@ public class Main {
     }
 
     static void inpuringOfWord(String word){
-        word=(word.replaceAll("[.,1234567890()–]", ""));
-        int j=0;
-        for (int i = 0 ; i < word.length() ; i++) {
-            if (word.charAt(i)==' ') {
-                System.out.println(word.substring(j, i).trim());
-                j=i;
-            }
+        word=(word.replaceAll("[.,]", "")).trim();
 
+
+        String[] wordArr = word.split("\\s");
+
+        for (int i = 0; i < wordArr.length; i++) {
+            if (wordArr[i].equals(" ")) continue;
+            System.out.println(wordArr[i]);
         }
+
+
+
+
+
+
+
+
+//        int j=0;
+//        for (int i = 0 ; i < word.length() ; i++) {
+//            if (word.charAt(i)==' ') {
+//                System.out.println(word.substring(j, i).trim());
+//                j=i;
+//            }
+//
+//        }
 
 
     }
